@@ -1,0 +1,28 @@
+<div class="mt-5">
+  <div class="container mb-5 px-5">
+    <input [(ngModel)]="searchInput" placeholder="Search doctors" type="text" class="form-control">
+  </div>
+
+  <table class="table table-secondary">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">City</th>
+        <th scope="col">Website</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doctor of doctors | search: searchInput">
+        <td>{{doctor.name}}</td>
+        <td>{{doctor.username}}</td>
+        <td>{{doctor.email}}</td>
+        <td>{{doctor.phone}}</td>
+        <td>{{doctor.address.city}}</td>
+        <td>{{doctor.website}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

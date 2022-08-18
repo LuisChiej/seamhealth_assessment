@@ -1,0 +1,9 @@
+th, td {
+  font-size: 12px !important;
+  font-weight: 400;
+  padding-top: 15px;
+}
+
+.form-control:valid {
+  background-color:  hsl(0,0%,85.5%)!important;
+}

@@ -1,0 +1,68 @@
+<div>
+  <form [formGroup]="createDoctorForm" (submit)="submit()">
+    <div class="row my-4">
+      <h6><strong>Register New Doctor</strong></h6>
+
+      <div class="form-group col-md-4">
+        <label for="name" class="sr-only label">Name</label>
+        <input name="name" type="text" formControlName="name" class="form-control">
+
+        <div *ngIf="submitted && formControl.name.errors" class="text-danger">
+          <div *ngIf="formControl.name.errors?.['required']"> Please enter your name</div>
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="username" class="sr-only label">Username</label>
+        <input name="username" type="text" formControlName="username" class="form-control">
+
+        <div *ngIf="submitted && formControl.username.errors" class="text-danger">
+          <div *ngIf="formControl.username.errors?.['required']"> Please enter your username</div>
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="email" class="sr-only label">Email</label>
+        <input name="email" type="email" formControlName="email" class="form-control">
+
+        <div *ngIf="submitted && formControl.email.errors" class="text-danger">
+          <div *ngIf="formControl.email.errors?.['required']"> Please enter your email</div>
+          <div *ngIf="formControl.email.errors?.['email']"> Invalid email</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row my-4">
+      <div class="form-group col-md-4">
+        <label for="phonenumber" class="sr-only label">Phone</label>
+        <input name="phonenumber" type="tel" formControlName="phonenumber" class="form-control">
+
+        <div *ngIf="submitted && formControl.phonenumber.errors" class="text-danger">
+          <div *ngIf="formControl.phonenumber.errors?.['required']"> Please enter your phonenumber</div>
+          <div *ngIf="formControl.phonenumber.errors?.['pattern']"> Invalid phonenumber. Phonenumber must use 0XXXXXXXXXX format </div>
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="city" class="sr-only label">City</label>
+        <input name="city" type="text" formControlName="city" class="form-control">
+
+        <div *ngIf="submitted && formControl.city.errors" class="text-danger">
+          <div *ngIf="formControl.city.errors?.['required']"> Please enter your website</div>
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="website" class="sr-only label">Website</label>
+        <input name="website" type="text" formControlName="website" class="form-control">
+
+
+        <div *ngIf="submitted && formControl.website.errors" class="text-danger">
+          <div *ngIf="formControl.website.errors?.['required']"> Please enter your city</div>
+          <div *ngIf="formControl.website.errors?.['pattern']"> Please enter your city</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-end mt-5">
+      <button class="btn btn-secondary btn-block w-25" type="submit">Register</button>
+    </div>
+  </form>
+</div>
