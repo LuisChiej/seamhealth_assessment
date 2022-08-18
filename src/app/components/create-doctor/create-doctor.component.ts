@@ -32,7 +32,7 @@ export class CreateDoctorComponent implements OnInit {
         validators: [Validators.required, Validators.email]
       }),
       phonenumber: this.fb.nonNullable.control('', {
-        validators: [Validators.required, Validators.pattern('(^0)(7|8|9){1}(0|1){1}[0–9]{8}')]
+        validators: [Validators.required, Validators.pattern('(^0)(7|8|9){1}(0|1){1}[0-9]{8}')]
       }),
       city: this.fb.nonNullable.control('', {
         validators: [Validators.required]
